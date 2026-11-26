@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{width:1080px;height:1920px;position:relative}
+.sc{position:absolute;inset:0}
+.center{position:absolute;left:80px;right:80px;text-align:center}
+.k{font-size:64px;font-weight:700;color:var(--rose)}
+.big{font-size:230px;font-weight:800;line-height:1}
+.mid{font-size:96px;font-weight:800;line-height:1.2}
+.ask{position:absolute;background:var(--card);border-radius:44px;padding:30px 54px;font-size:72px;font-weight:800;box-shadow:0 14px 40px rgba(42,36,51,.12);white-space:nowrap}
+.rep{position:absolute;background:#E9E2D8;color:#6B6170;border-radius:40px;padding:22px 44px;font-size:48px;font-weight:700;white-space:nowrap}
+.one{position:absolute;left:140px;right:140px;top:760px;background:var(--card);border-radius:60px;padding:70px 60px;box-shadow:0 20px 60px rgba(42,36,51,.15);text-align:center}
+.one .row{font-size:60px;font-weight:700;line-height:1.75;text-align:right}
+.one .row b{color:var(--sage)}
+.close .logo-slot{position:absolute;left:50%;top:430px;width:420px;height:420px;margin-left:-210px;font-size:48px}
+.cta{display:inline-block;background:var(--rose);color:#fff;border-radius:90px;padding:36px 80px;font-size:62px;font-weight:800}
+.safe{position:absolute;top:0;left:0;right:0;height:1920px}
+</style></head><body>
+<div class="logo-slot logo-corner" id="corner" style="top:120px">مكان<br>اللوغو</div>
+<div class="sc" id="A">
+ <div class="center" style="top:560px"><div class="k" id="a1">لسا بتلفّ على</div></div>
+ <div class="center" style="top:700px"><div class="big" id="a2"><span id="cnt">1</span> مزوّد</div></div>
+ <div class="center" style="top:990px"><div class="mid" id="a3">عشان عرسك؟</div></div>
+</div>
+<div class="sc" id="B">
+ <div class="ask" id="q1" style="top:360px;right:110px">قاعة؟</div>
+ <div class="rep" id="r1" style="top:550px;right:200px">بشوف وبرجعلك…</div>
+ <div class="ask" id="q2" style="top:690px;left:110px">DJ؟</div>
+ <div class="rep" id="r2" style="top:880px;left:190px">محجوز بهاليوم</div>
+ <div class="ask" id="q3" style="top:1010px;right:150px">مصوّر؟</div>
+ <div class="rep" id="r3" style="top:1200px;right:240px">ما ردّ…</div>
+ <div class="ask" id="q4" style="top:1320px;left:130px">ضيافة؟ تزيين؟</div>
+ <div class="ask" id="q5" style="top:1500px;right:170px">والمكاتيب؟</div>
+</div>
+<div class="sc" id="C">
+ <div class="center" style="top:420px"><div class="mid" id="c1">كل هاد…<br><span style="color:var(--rose)">من مكان واحد.</span></div></div>
+ <div class="one" id="c2">
+  <div class="row"><b>✓</b> قاعة</div><div class="row"><b>✓</b> DJ وزفة</div><div class="row"><b>✓</b> تصوير</div>
+  <div class="row"><b>✓</b> ضيافة</div><div class="row"><b>✓</b> تزيين وكوشة</div><div class="row"><b>✓</b> مكاتيب من الألف للياء</div>
+ </div>
+</div>
+<div class="sc close" id="D">
+ <div class="logo-slot" id="d0">مكان اللوغو</div>
+ <div class="center" style="top:960px"><div class="mid" id="d1">حط تاريخ عرسك،<br>وشوف مين فاضي.</div></div>
+ <div class="center" style="top:1290px"><div class="cta" id="d2">ابعت تاريخ عرسك بالخاص</div></div>
+</div>
+<script src="reel.js"></script>
+<script>
+window.DUR=14;
+window.render=function(t){
+ // scene A 0-2.4
+ const A=t<2.6; css('#A',{display:A?'block':'none'});
+ if(A){pop('#a1',t,0,.3,2.2);pop('#a2',t,.15,.35,2.2);pop('#a3',t,.9,.35,2.2);
+  $('#cnt').textContent=Math.round(1+29*eo(P(t,.15,1.3)));}
+ // scene B 2.4-7
+ const B=t>=2.4&&t<7.2; css('#B',{display:B?'block':'none'});
+ if(B){const ids=['q1','r1','q2','r2','q3','r3','q4','q5'];
+  ids.forEach((id,i)=>{const a=2.5+i*.48; pop('#'+id,t,a,.3,6.6,60);
+   if(t>5.9){const s=P(t,5.9,6.8);css('#'+id,{filter:`blur(${s*6}px)`})}else css('#'+id,{filter:'none'})});}
+ // scene C 6.9-10.4
+ const C=t>=6.9&&t<10.6; css('#C',{display:C?'block':'none'});
+ if(C){pop('#c1',t,7.0,.4,10.2);pop('#c2',t,7.6,.45,10.2,80);$$('#c2 .row').forEach((r,i)=>pop(r,t,7.9+i*.22,.3,null,20));}
+ // scene D 10.4-14
+ const D=t>=10.4; css('#D',{display:D?'block':'none'}); css('#corner',{opacity:D?0:1});
+ if(D){pop('#d0',t,10.5,.4);pop('#d1',t,10.9,.4);pop('#d2',t,11.5,.4);
+  const pulse=1+.04*Math.sin(Math.max(0,t-12)*5); if(t>12)css('#d2',{transform:`scale(${pulse})`});}
+};
+render(0);
+</script></body></html>

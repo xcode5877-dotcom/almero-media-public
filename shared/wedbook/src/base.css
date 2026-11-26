@@ -1,0 +1,11 @@
+@font-face{font-family:C;font-weight:400;src:url(fonts/cairo-arabic-400-normal.woff2);unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+200C-200F}
+@font-face{font-family:C;font-weight:700;src:url(fonts/cairo-arabic-700-normal.woff2);unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+200C-200F}
+@font-face{font-family:C;font-weight:800;src:url(fonts/cairo-arabic-800-normal.woff2);unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+200C-200F}
+@font-face{font-family:C;font-weight:400;src:url(fonts/cairo-latin-400-normal.woff2)}
+@font-face{font-family:C;font-weight:700;src:url(fonts/cairo-latin-700-normal.woff2)}
+@font-face{font-family:C;font-weight:800;src:url(fonts/cairo-latin-800-normal.woff2)}
+:root{--bg:#F6F1EA;--ink:#2A2433;--rose:#B85C6E;--sage:#4F8A6B;--mute:#B9B1A8;--card:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:C,sans-serif;direction:rtl;overflow:hidden}
+.logo-slot{position:absolute;border:4px dashed var(--rose);border-radius:24px;display:flex;align-items:center;justify-content:center;color:var(--rose);font-weight:700;opacity:.85}
+.logo-corner{top:60px;left:60px;width:150px;height:150px;font-size:26px;text-align:center;line-height:1.2}

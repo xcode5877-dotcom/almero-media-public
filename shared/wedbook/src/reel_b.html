@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{width:1080px;height:1920px;position:relative}
+.sc{position:absolute;inset:0}
+.center{position:absolute;left:80px;right:80px;text-align:center}
+.k{font-size:64px;font-weight:700;color:var(--rose)}
+.big{font-size:200px;font-weight:800;line-height:1.05}
+.mid{font-size:96px;font-weight:800;line-height:1.2}
+.cal{position:absolute;left:110px;right:110px;top:560px;background:var(--card);border-radius:56px;padding:50px 46px;box-shadow:0 20px 60px rgba(42,36,51,.14)}
+.cal h3{font-size:62px;font-weight:800;text-align:center;margin-bottom:26px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;direction:rtl}
+.grid div{height:96px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;border-radius:50%}
+.grid .h{font-size:32px;color:var(--mute);height:60px}
+.grid .sel{background:var(--rose);color:#fff}
+.tap{position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(184,92,110,.35);border:5px solid var(--rose);pointer-events:none}
+.list{position:absolute;left:110px;right:110px;top:470px}
+.it{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:40px;padding:0 50px;height:130px;margin-bottom:22px;box-shadow:0 10px 30px rgba(42,36,51,.08);overflow:hidden}
+.it span{font-size:58px;font-weight:800}
+.it i{font-style:normal;font-size:42px;font-weight:800;border-radius:40px;padding:8px 30px}
+.it.f i{background:#E3EFE8;color:var(--sage)}
+.it.b i{background:#EEE9E3;color:#9A9089}
+.it.b span{color:#A79F99}
+.close .logo-slot{position:absolute;left:50%;top:430px;width:420px;height:420px;margin-left:-210px;font-size:48px}
+.cta{display:inline-block;background:var(--rose);color:#fff;border-radius:90px;padding:36px 80px;font-size:62px;font-weight:800}
+</style></head><body>
+<div class="logo-slot logo-corner" id="corner" style="top:120px">مكان<br>اللوغو</div>
+<div class="sc" id="A">
+ <div class="center" style="top:560px"><div class="k" id="a1">عرسك بـ</div></div>
+ <div class="center" style="top:680px"><div class="big" id="a2">12/8؟</div></div>
+ <div class="center" style="top:960px"><div class="mid" id="a3">شوف مين <span style="color:var(--sage)">فاضي.</span></div></div>
+</div>
+<div class="sc" id="B">
+ <div class="center" style="top:330px"><div class="k" id="b0">1. حط تاريخ عرسك</div></div>
+ <div class="cal" id="cal"><h3>آب 2027</h3><div class="grid" id="grid"></div></div>
+ <div class="tap" id="tap"></div>
+</div>
+<div class="sc" id="C">
+ <div class="center" style="top:300px"><div class="k" id="c0">2. بيطلعلك بس اللي فاضي</div></div>
+ <div class="list" id="list">
+  <div class="it f"><span>قاعة</span><i>فاضي</i></div>
+  <div class="it b"><span>قاعة</span><i>محجوز</i></div>
+  <div class="it f"><span>DJ وزفة</span><i>فاضي</i></div>
+  <div class="it b"><span>تصوير</span><i>محجوز</i></div>
+  <div class="it f"><span>تصوير وفيديو</span><i>فاضي</i></div>
+  <div class="it b"><span>ضيافة</span><i>محجوز</i></div>
+  <div class="it f"><span>ضيافة</span><i>فاضي</i></div>
+  <div class="it f"><span>تزيين وكوشة</span><i>فاضي</i></div>
+ </div>
+ <div class="center" style="top:1560px"><div class="mid" id="c9" style="font-size:80px">بدون ولا تلفون.</div></div>
+</div>
+<div class="sc close" id="D">
+ <div class="logo-slot" id="d0">مكان اللوغو</div>
+ <div class="center" style="top:960px"><div class="mid" id="d1">حط تاريخ عرسك،<br>وشوف مين فاضي.</div></div>
+ <div class="center" style="top:1290px"><div class="cta" id="d2">ابعت تاريخ عرسك بالخاص</div></div>
+</div>
+<script src="reel.js"></script>
+<script>
+// Aug 2027: 1st = Sunday; week starts Sunday (rightmost in RTL)
+const g=$('#grid');['أحد','اثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'].forEach(d=>{const e=document.createElement('div');e.className='h';e.textContent=d;g.appendChild(e)});
+for(let d=1;d<=31;d++){const e=document.createElement('div');e.textContent=d;if(d===12)e.id='d12';g.appendChild(e)}
+window.DUR=15;
+let tapPos=null;
+window.render=function(t){
+ const A=t<2.5; css('#A',{display:A?'block':'none'});
+ if(A){pop('#a1',t,0,.3,2.15);pop('#a2',t,.12,.35,2.15);pop('#a3',t,.8,.35,2.15);}
+ const B=t>=2.3&&t<5.6; css('#B',{display:B?'block':'none'});
+ if(B){pop('#b0',t,2.35,.3,5.25);pop('#cal',t,2.45,.45,5.25,120);
+  if(!tapPos){const r=$('#d12').getBoundingClientRect();tapPos={x:r.left+r.width/2,y:r.top+r.height/2}}
+  const sel=t>=3.9; $('#d12').classList.toggle('sel',sel);
+  const tp=P(t,3.3,3.9),tr=P(t,3.9,4.5);
+  const sx=tapPos.x+260*(1-eo(tp)),sy=tapPos.y+420*(1-eo(tp));
+  const sc=t<3.9?1:1+0.6*tr;
+  css('#tap',{left:(sx-55)+'px',top:(sy-55)+'px',opacity:t<3.3?0:(t<3.9?1:1-tr),transform:`scale(${sc})`});
+  if(sel){const k=1+.12*Math.sin(P(t,3.9,4.3)*Math.PI);css('#d12',{transform:`scale(${k})`})}}
+ const C=t>=5.4&&t<10.8; css('#C',{display:C?'block':'none'});
+ if(C){pop('#c0',t,5.45,.3,10.45);
+  $$('#list .it').forEach((e,i)=>{const a=5.6+i*.13;let o=P(t,a,a+.25),x=eo(P(t,a,a+.35));
+   let h=130,mb=22,fade=1;
+   if(e.classList.contains('b')){const q=eo(P(t,7.6,8.3));fade=1-q;h=130*(1-q);mb=22*(1-q);}
+   const out=P(t,10.45,10.8);
+   css(e,{opacity:o*fade*(1-out),transform:`translateX(${(1-x)*-120}px)`,height:h+'px',marginBottom:mb+'px'})});
+  pop('#c9',t,8.5,.35,10.45);}
+ const D=t>=10.6; css('#D',{display:D?'block':'none'}); css('#corner',{opacity:D?0:1});
+ if(D){pop('#d0',t,10.7,.4);pop('#d1',t,11.1,.4);pop('#d2',t,11.7,.4);
+  if(t>12.2)css('#d2',{transform:`scale(${1+.04*Math.sin((t-12.2)*5)})`});}
+};
+render(0);
+</script></body></html>
