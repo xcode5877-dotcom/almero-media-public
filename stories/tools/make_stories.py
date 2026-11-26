@@ -14,7 +14,7 @@ CSS=f"""@font-face{{font-family:H;font-weight:900;src:url({F}heebo-hebrew-900-no
 .t span{{display:inline-block;background:#fff;color:#0b0b0b;font:900 78px/1.15 H;padding:16px 44px;transform:rotate(-2deg);box-shadow:0 10px 30px rgba(0,0,0,.35);max-width:900px}}
 .cta{{position:absolute;top:1430px;left:0;right:0;text-align:center}} .cta b{{display:inline-block;font:500 44px H;color:#fff;background:rgba(10,10,10,.72);padding:12px 34px;border-radius:40px}}
 .card{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;background:rgba(8,8,8,.62)}}
-.card .big{{font:900 96px/1.15 H;padding:0 60px}} .card .sm{{font:500 48px H;color:#ddd;margin-top:40px}}
+.card .big{{font:900 96px/1.15 H;padding:0 60px}} .card .sm{{font:500 52px/1.6 H;color:#eee;margin-top:40px}}
 """
 def html(s):
     if s.get('card'):
