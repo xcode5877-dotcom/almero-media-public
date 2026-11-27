@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Cairo;src:url(ca.woff2);font-weight:200 1000;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200F,U+060C}
+@font-face{font-family:Cairo;src:url(cl.woff2);font-weight:200 1000;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:HebF;src:url(he.woff2);font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{background:linear-gradient(180deg,#0B1A33 0%,#13294B 60%,#1A3565 100%);font-family:Cairo,HebF,sans-serif;color:#fff;position:relative}
+.glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(233,201,119,.10),rgba(0,0,0,0) 55%)}
+.top{position:absolute;top:150px;left:0;right:0;text-align:center}
+.top img{width:200px}
+.top .ln{width:140px;height:3px;background:#C8A96A;margin:18px auto 0}
+.scene{position:absolute;left:70px;right:70px;top:330px;height:1200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0}
+.gold{color:#E9C977}
+.he{font-family:HebF;font-weight:600}
+.h1{font-weight:900;font-size:110px;line-height:1.25}
+.warn{width:300px;height:300px;border:10px solid #E9C977;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:240px;color:#E9C977;line-height:1;margin:40px 0 30px;font-family:Cairo}
+.sub{font-weight:500;font-size:64px;line-height:1.5;color:#F3EEE2}
+.big3{font-weight:900;font-size:440px;line-height:.95;color:#E9C977;font-family:Cairo}
+.lab{font-size:58px;font-weight:800;color:#C8A96A;margin-bottom:34px}
+.q{position:relative;display:inline-block;font-weight:900;font-size:92px;line-height:1.3;color:#fff;padding:0 10px}
+.q .mk{color:#E9C977}
+.q .x{position:absolute;right:0;top:52%;height:9px;background:#E07A6B;border-radius:5px;width:0}
+.no{font-size:50px;font-weight:700;color:#E07A6B;margin-top:22px;opacity:0}
+.alt{margin-top:56px;opacity:0;border-top:3px solid rgba(233,201,119,.45);padding-top:44px}
+.alt .t{font-size:52px;font-weight:800;color:#E9C977}
+.alt .b{font-size:66px;font-weight:700;line-height:1.5;color:#F3EEE2;margin-top:14px}
+.dots{position:absolute;top:1530px;left:0;right:0;display:flex;justify-content:center;gap:22px;opacity:0}
+.dots i{width:22px;height:22px;border-radius:50%;background:rgba(233,201,119,.25);display:block}
+.dots i.on{background:#E9C977}
+.foot{position:absolute;bottom:250px;left:0;right:0;text-align:center;font-size:40px;font-weight:600;color:#C8A96A}
+#cta{top:300px;height:1350px}
+#cta .mk2{width:560px}
+.nm{font-weight:900;font-size:96px;color:#E9C977;margin-top:50px;line-height:1.2}
+.of{font-size:42px;font-weight:600;color:#F3EEE2;margin-top:6px}
+.ca{font-weight:800;font-size:64px;margin-top:60px;line-height:1.35}
+.btn{margin-top:36px;background:linear-gradient(180deg,#FEEA89,#E9C977 45%,#C8A96A);color:#0B1A33;border-radius:999px;padding:14px 70px 22px;font-weight:900;font-size:104px;direction:ltr;line-height:1.25}
+.share{font-size:46px;font-weight:600;color:#E9C977;margin-top:34px}
+.disc{font-size:36px;font-weight:500;color:#cfd6e4;margin-top:28px;line-height:1.5}
+.it{opacity:0}
+.row{font-size:62px;font-weight:700;line-height:1.5;color:#F3EEE2;margin:14px 0}
+.row .ok{color:#7FC8A0;font-weight:900}.row .bad{color:#E07A6B;font-weight:900}
+.pill{display:inline-block;margin-top:30px;border:4px solid #E9C977;border-radius:999px;padding:6px 48px 14px;font-size:62px;font-weight:800;color:#E9C977}
+</style></head><body>
+<div class="glow"></div>
+<div class="top" id="top"><img src="mark.png"><div class="ln"></div></div>
+
+<div class="scene" data-a="0" data-b="3.6">
+  <div class="h1" style="font-size:150px">انصبت؟</div>
+  <div class="h1 gold it" data-at="0.35" style="font-size:118px;margin-top:20px">من الشغل ولا لا؟</div>
+  <div class="sub it" data-at="0.9" style="margin-top:40px">هالسؤال بيغيّر كل الملف</div>
+</div>
+<div class="scene" data-a="3.6" data-b="7.0">
+  <div class="sub">بالتأمين الوطني · <span class="he gold">ביטוח לאומי</span></div>
+  <div class="big3">2</div>
+  <div class="h1">مسارين مختلفين</div>
+</div>
+<div class="scene" data-a="7.0" data-b="14.0"><div class="lab">مسار 1</div>
+  <div class="h1" style="font-size:92px">صارت بالشغل؟<br><span class="it" data-at="0.9">أو بالطريق للشغل؟</span></div>
+  <div class="alt it" data-at="2.2"><div class="t">ممكن تكون</div><div class="b" style="font-size:96px;font-weight:900;color:#fff">إصابة عمل</div><div class="sub he gold" style="font-size:56px">פגיעה בעבודה</div></div></div>
+<div class="scene" data-a="14.0" data-b="21.0"><div class="lab">مسار 2</div>
+  <div class="h1" style="font-size:92px">صارت برّا الشغل؟<br><span class="it" data-at="0.9">أو مرض؟</span></div>
+  <div class="alt it" data-at="2.2"><div class="t">في مسار ثاني</div><div class="b" style="font-size:96px;font-weight:900;color:#fff">عجز عام</div><div class="sub he gold" style="font-size:56px">נכות כללית</div></div></div>
+<div class="scene" data-a="21.0" data-b="27.0"><div class="lab">ليش بفرق؟</div>
+  <div class="h1" style="font-size:96px">كل مسار إله</div>
+  <div class="row it" data-at="0.8" style="font-size:80px;font-weight:900;color:#E9C977">طلب لحال</div>
+  <div class="row it" data-at="1.6" style="font-size:80px;font-weight:900;color:#E9C977">لجنة لحال</div>
+  <div class="row it" data-at="2.4" style="font-size:80px;font-weight:900;color:#E9C977">وشروط لحال</div></div>
+<div class="scene" data-a="27.0" data-b="31.0"><div class="lab">الأهم</div>
+  <div class="h1" style="font-size:100px">مش متأكد<br>لأي مسار؟</div>
+  <div class="h1 gold it" data-at="1.0" style="font-size:110px;margin-top:20px">لا تخمّن.</div></div>
+<div class="foot" id="foot">المحامي نمر مصالحة · <span class="he">נימר מסאלחה</span></div>
+<div class="scene" id="cta" data-a="31.0" data-b="99">
+  <img class="mk2" src="mark.png">
+  <div class="nm">المحامي نمر مصالحة</div>
+  <div class="of">مكتب محاماة · <span class="he">משרד עורכי דין</span> · دبورية</div>
+  <div class="ca">انصبت ومش عارف لأي مسار؟<br>ابعتلنا على الواتساب</div>
+  <div class="btn">054-334-5123</div>
+  <div class="share">ابعت الفيديو لحدا انصاب</div>
+  <div class="disc">المعلومات عامة ولا تُعتبر استشارة قانونية.</div>
+</div>
+<script>
+const SC=[...document.querySelectorAll('.scene')].map(e=>[e,+e.dataset.a,+e.dataset.b]);
+const CT=SC[SC.length-1][1];
+const ease=x=>1-Math.pow(1-Math.min(Math.max(x,0),1),3);
+const clamp=x=>Math.min(Math.max(x,0),1);
+window.render=function(t){
+ for(const [el,a,b] of SC){
+  const inP=a===0?1:ease((t-a)/0.4), outP=b>90?1:clamp((b-t)/0.25);
+  el.style.opacity=(t<a||t>b)?0:Math.min(inP,outP);
+  el.style.transform=`translateY(${(1-inP)*60}px)`;
+  el.querySelectorAll('.it').forEach(x=>{const k=ease((t-a-(+x.dataset.at))/0.4);x.style.opacity=k;x.style.transform=`translateY(${(1-k)*36}px)`});
+  el.querySelectorAll('.x').forEach(x=>{x.style.width=(ease((t-a-(+x.dataset.at))/0.45)*100)+'%'});
+ }
+ document.getElementById('foot').style.opacity=t<CT?1:0;
+ document.getElementById('top').style.opacity=t<CT?1:0;
+ if(t>CT){const s=1+0.03*Math.sin((t-CT)*4);document.querySelector('.btn').style.transform=`scale(${s})`;}
+};
+render(0);
+</script></body></html>
