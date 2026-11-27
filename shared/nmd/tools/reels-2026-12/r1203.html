@@ -1,0 +1,77 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+.top{position:absolute;top:190px;left:60px;right:60px;display:flex;align-items:center;justify-content:space-between;z-index:40}
+.brk{background:var(--red);color:#fff;font-weight:800;font-size:44px;padding:14px 34px;border-radius:12px;display:flex;align-items:center;gap:16px}
+.brk i{width:20px;height:20px;border-radius:50%;background:#fff;display:inline-block;animation:blink 1s steps(1) infinite}
+.date{color:var(--mute);font-size:34px;font-weight:600}
+.ticker{position:absolute;bottom:160px;left:0;right:0;height:90px;background:var(--red);overflow:hidden;z-index:40;display:flex;align-items:center}
+.ticker .lab{position:absolute;right:0;top:0;bottom:0;background:#fff;color:var(--red);font-weight:800;font-size:38px;padding:0 30px;display:flex;align-items:center;z-index:2}
+.ticker .run{white-space:nowrap;font-size:38px;font-weight:600;animation:tick 23s linear both}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(50%)}}
+.num{font-size:250px;font-weight:800;color:var(--teal);line-height:1}
+.idx{color:var(--red);font-weight:800;font-size:38px}
+.card{position:absolute;left:70px;right:70px;background:#0f1a21;border:3px solid #1f3640;border-radius:30px;padding:40px}
+.ttl{font-size:38px;font-weight:800;line-height:1.4}
+.meta{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+.lb{font-size:28px;font-weight:600;padding:8px 20px;border-radius:999px;border:2px solid}
+.cm{margin-top:30px;border-top:2px solid #1f3640;padding-top:30px;display:flex;gap:24px;align-items:flex-start}
+.av{width:80px;height:80px;border-radius:50%;background:#24414b;flex:none;display:flex;align-items:center;justify-content:center;font-size:40px}
+.bub{background:#14232b;border-radius:22px;padding:22px 28px;font-size:36px;font-weight:600;line-height:1.4}
+.bub small{display:block;color:var(--mute);font-size:26px;font-weight:500}
+.ok{color:#3fb950}
+</style></head><body>
+<div class="bgfx"></div><div class="grid"></div>
+<img class="logo" src="assets/logo-light.png"><div class="studio" style="bottom:90px">NMD Studio</div>
+<div class="top"><div class="brk"><i></i>نشرة NMD #2</div><div class="date">الخميس 3/12</div></div>
+<div class="ticker glob"><div class="lab">NMD</div><div class="run">محامي: 34 محادثة واتساب بـ3 أيام  •  الشغل بيتحضّر بوكلاء AI وبينزل بموافقة إنسان  •  سؤال الأسبوع: قديش بتدفع على كل محادثة؟  •  ابعت «فحص» بالخاص  •  محامي: 34 محادثة واتساب بـ3 أيام  •  الشغل بيتحضّر بوكلاء AI وبينزل بموافقة إنسان  •  سؤال الأسبوع: قديش بتدفع على كل محادثة؟  •  ابعت «فحص» بالخاص  •  محامي: 34 محادثة واتساب بـ3 أيام  •  الشغل بيتحضّر بوكلاء AI وبينزل بموافقة إنسان  •  سؤال الأسبوع: قديش بتدفع على كل محادثة؟  •  ابعت «فحص» بالخاص  •  محامي: 34 محادثة واتساب بـ3 أيام  •  الشغل بيتحضّر بوكلاء AI وبينزل بموافقة إنسان  •  سؤال الأسبوع: قديش بتدفع على كل محادثة؟  •  ابعت «فحص» بالخاص</div></div>
+
+<!-- S1 -->
+<div class="scene" data-s="0" data-e="3.5">
+  <div class="center h1" style="top:520px">شو صار<br>هالأسبوع<br>عند <span class="t">زباينا</span>؟</div>
+  <div class="center sub a" style="top:1120px;animation-delay:.6s">3 أخبار، 20 ثانية. أرقام حقيقية.</div>
+</div>
+
+<!-- S2 -->
+<div class="scene" data-s="3.5" data-e="9">
+  <div class="center a" style="top:380px"><span class="idx">خبر 1/3</span></div>
+  <div class="center h2 a" style="top:460px;animation-delay:.1s">المحامي نعمان:<br>حملة جديدة لخدمة ثانية بالمكتب</div>
+  <div class="center" style="top:800px"><div class="num" id="n34">0</div></div>
+  <div class="center h2 a" style="top:1065px;animation-delay:.3s">محادثة واتساب</div>
+  <div class="center a" style="top:1210px;animation-delay:.9s;display:flex;gap:20px;justify-content:center">
+    <span class="tag">3.43 ₪ للمحادثة</span><span class="tag">21–23/11</span>
+  </div>
+  <div class="center sub a" style="top:1350px;animation-delay:1.6s">ثاني حملة إله معنا. نفس الطريقة:<br>الهدف محادثة، مش لايك.</div>
+</div>
+
+<!-- S3 -->
+<div class="scene" data-s="9" data-e="14.5">
+  <div class="center a" style="top:380px"><span class="idx">خبر 2/3 · ورا الكواليس</span></div>
+  <div class="center h2 a" style="top:460px;animation-delay:.1s">وكلاء AI بيجهّزوا الشغل.<br><span class="t">إنسان بيوافق.</span></div>
+  <div class="card a" style="top:760px;animation-delay:.3s">
+    <div class="ttl">[موافقة] نشر ريل «تفكيك إعلان نعمان»</div>
+    <div class="meta"><span class="lb" style="color:var(--teal);border-color:var(--teal)">content</span><span class="lb" style="color:#e3b341;border-color:#e3b341">needs:approval</span></div>
+    <div class="cm f" style="animation-delay:.9s"><div class="av">🤖</div><div class="bub">الريل جاهز: فيديو، كابشن، موعد.<small>الوكيل</small></div></div>
+    <div class="cm f" style="animation-delay:1.9s"><div class="av" style="background:var(--teal);color:#0B1218;font-weight:800">ف</div><div class="bub">موافق<small>فواز · من لوحة NMD</small></div></div>
+    <div class="cm f" style="animation-delay:3s"><div class="av">🤖</div><div class="bub"><span class="ok">انجدول ✅</span> 19:00، إنستغرام + فيسبوك<small>الوكيل</small></div></div>
+  </div>
+  <div class="center sub a" style="top:1560px;animation-delay:3.6s">ولا إشي بينزل بدون موافقة.</div>
+</div>
+
+<!-- S4 -->
+<div class="scene" data-s="14.5" data-e="18.5">
+  <div class="center a" style="top:430px"><span class="idx">خبر 3/3 · سؤال الأسبوع</span></div>
+  <div class="center h1 a" style="top:540px;animation-delay:.1s">قديش بتدفع<br>على كل<br><span class="t">محادثة</span>؟</div>
+  <div class="center sub a" style="top:1130px;animation-delay:.8s">إذا ما بتعرف الرقم،<br>هون منبلّش الفحص.</div>
+</div>
+
+<!-- S5 -->
+<div class="scene" data-s="18.5" data-e="23.5">
+  <div class="center h2 a" style="top:450px">بدّك مصلحتك تكون<br>بـ<span class="t">النشرة الجاية</span>؟</div>
+  <div class="center sub a" style="top:740px;animation-delay:.2s">15 دقيقة، مجانًا</div>
+  <div class="center" style="top:900px"><span class="btn p" style="animation-delay:.4s">ابعت «فحص» بالخاص</span></div>
+  <div class="center sub f" style="top:1180px;animation-delay:1s">بنجيب زباين، مش لايكات.</div>
+</div>
+<script>
+window.onT=t=>{const k=Math.min(Math.max((t-4)/1.4,0),1);document.getElementById('n34').textContent=Math.round(34*(1-Math.pow(1-k,3)));};
+</script>
+</body></html>
